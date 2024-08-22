@@ -176,14 +176,14 @@ const SignIn = () => {
       <div className="flex flex-col items-center mt-6 mb-4 ml-auto mr-auto">
     <p className="text-center text-sm mb-4">
       Don’t have an account?{" "}
-      <a
-        href="#"
-        className={`hover:underline ${
-          darkMode ? "text-blue-600" : "text-blue-500"
-        }`}
-      >
-        Register here
-      </a>
+      <Link
+              to="/"
+              className={`hover:underline ${
+                darkMode ? "text-blue-600" : "text-blue-500"
+              }`}
+            >
+              Register here
+            </Link>
     </p>
     <div
       className="flex items-center justify-center gap-4 mt-6"
