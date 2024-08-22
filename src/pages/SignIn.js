@@ -64,21 +64,32 @@ const SignIn = () => {
 
       {/* Top Bar (Visible only on mobile) */}
       <div
-  className={`md:hidden fixed top-0 left-0 w-full h-[80px] mb-6 flex items-center px-4 ${
-    darkMode ? "bg-blue-700" : "bg-blue-500"
-  }`}
-  style={{
-    opacity: 1,
-    gap: "0px",
-  }}
->
-  <img src={logo}  alt="Logo" className="h-10 w-auto text-white" />
-  <span className="ml-2 text-white font-bold text-lg">Base</span>
-</div>
+        className={`md:hidden fixed top-0 left-0 w-full h-[80px] flex items-center px-4 justify-between ${
+          darkMode ? "bg-blue-700" : "bg-blue-500"
+        }`}
+        style={{
+          opacity: 1,
+          gap: "0px",
+        }}
+      >
+        <div className="flex items-center">
+          <img src={logo} alt="Logo" className="h-10 w-auto text-white" />
+          <span className="ml-2 text-white font-bold text-lg">Base</span>
+        </div>
+        {/* Dark Mode/Light Mode Button in Top Bar */}
+        <button
+          onClick={toggleDarkMode}
+          className={`flex items-center justify-center w-[40px] h-[40px] p-2 rounded-full shadow-md ${
+            darkMode ? "bg-gray-700 text-white" : "bg-white text-black"
+          }`}
+        >
+          {darkMode ? <IoSunnyOutline className="text-xl" /> : <LuMoon className="text-xl" />}
+        </button>
+      </div>
 
       {/* Sign-In Container */}
       <div
-        className={`flex flex-col items-center ml-[10%] mr-[10%] mt-[14%] mb-[14%] md:items-start p-4 md:p-8 shadow-md rounded-lg w-full md:max-w-md ${
+        className={`flex flex-col items-center mx-[10%] mt-[96px] md:mt-[14%] mb-[14%] md:items-start p-4 md:p-8 shadow-md rounded-lg w-full md:max-w-md ${
           darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
         }`}
       >
@@ -173,10 +184,10 @@ const SignIn = () => {
           </form>
         </div>
 
-      <div className="flex flex-col items-center mt-6 mb-4 ml-auto mr-auto">
-    <p className="text-center text-sm mb-4">
-      Don’t have an account?{" "}
-      <Link
+        <div className="flex flex-col items-center mt-6 mb-4 ml-auto mr-auto">
+          <p className="text-center text-sm mb-4">
+            Don’t have an account?{" "}
+            <Link
               to="/"
               className={`hover:underline ${
                 darkMode ? "text-blue-600" : "text-blue-500"
@@ -184,21 +195,21 @@ const SignIn = () => {
             >
               Register here
             </Link>
-    </p>
-    <div
-      className="flex items-center justify-center gap-4 mt-6"
-      style={{
-        width: "239.2px",
-        height: "38.4px",
-        opacity: 1, // Adjust opacity to 1 if you want the icons to be visible
-      }}
-    >
-      <FaGithub className="text-2xl hover:text-gray-500 transition duration-300" />
-      <FaTwitter className="text-2xl hover:text-blue-400 transition duration-300" />
-      <FaLinkedin className="text-2xl hover:text-blue-700 transition duration-300" />
-      <FaDiscord className="text-2xl hover:text-purple-600 transition duration-300" />
-    </div>
-  </div>
+          </p>
+          <div
+            className="flex items-center justify-center gap-4 mt-6"
+            style={{
+              width: "239.2px",
+              height: "38.4px",
+              opacity: 1, // Adjust opacity to 1 if you want the icons to be visible
+            }}
+          >
+            <FaGithub className="text-2xl hover:text-gray-500 transition duration-300" />
+            <FaTwitter className="text-2xl hover:text-blue-400 transition duration-300" />
+            <FaLinkedin className="text-2xl hover:text-blue-700 transition duration-300" />
+            <FaDiscord className="text-2xl hover:text-purple-600 transition duration-300" />
+          </div>
+        </div>
       </div>
     </div>
   );
