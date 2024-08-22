@@ -150,14 +150,14 @@ const SignIn = () => {
                 }`}
               />
             </div>
-            <a
-              href="#"
+            <Link
+              to="/" // Adjust the route if needed
               className={`text-sm hover:underline ${
                 darkMode ? "text-gray-400" : "text-blue-500"
               }`}
             >
               Forgot password?
-            </a>
+            </Link>
             <div className="mt-4">
               <Link
                 to="/home"
